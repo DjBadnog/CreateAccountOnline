@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
-public class RegisterAccountActivity extends AppCompatActivity implements TextWatcher {
+public class RegisterAccountActivity extends AppCompatActivity {
 
     private Button submit;
     private EditText name;
@@ -40,13 +41,6 @@ public class RegisterAccountActivity extends AppCompatActivity implements TextWa
         email = (EditText)findViewById(R.id.edtEmail);
         phoneNumber = (EditText)findViewById(R.id.edtPhoneNumber);
         address = (EditText)findViewById(R.id.edtPostalAddress);
-
-        submit.setEnabled(false);
-        name.addTextChangedListener(this);
-        surname.addTextChangedListener(this);
-        email.addTextChangedListener(this);
-        phoneNumber.addTextChangedListener(this);
-        address.addTextChangedListener(this);
 
     }
 
@@ -73,21 +67,5 @@ public class RegisterAccountActivity extends AppCompatActivity implements TextWa
             startActivity(captureDocs);
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        submit.setBackgroundColor(Color.YELLOW);
-        submit.setEnabled(false);
-    }
 
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        submit.setBackgroundColor(Color.GREEN);
-        submit.setEnabled(true);
-    }
-
-    @Override
-    public void afterTextChanged(Editable editable) {
-        submit.setBackgroundColor(Color.CYAN);
-        submit.setEnabled(true);
-    }
 }
