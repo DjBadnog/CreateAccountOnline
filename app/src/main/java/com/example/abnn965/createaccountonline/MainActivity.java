@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Method to navigate to Login screen
+    public void register(View view){
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
