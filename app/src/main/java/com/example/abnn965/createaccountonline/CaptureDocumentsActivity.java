@@ -23,17 +23,7 @@ public class CaptureDocumentsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_documents);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     public void selfiePicture(View view){
@@ -84,6 +74,12 @@ public class CaptureDocumentsActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    public void loginActivity(View view){
+
+        Intent loginIntent = new Intent(CaptureDocumentsActivity.this, MainActivity.class);
+        startActivity(loginIntent);
     }
 
 }

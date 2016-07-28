@@ -83,7 +83,8 @@
         android:text="Submit Pictures"
         android:id="@+id/btnSubmitPictures"
         android:layout_below="@+id/btnResident"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="loginActivity"/>
 
     <ImageView
         android:layout_width="wrap_content"

@@ -90,7 +90,8 @@
         android:layout_below="@+id/edtPostalAddress"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="82dp"
-        android:onClick="captureDocuments" />
+        android:onClick="captureDocuments"
+        android:background="#fff" />
 
     <ImageView
         android:layout_width="wrap_content"
