@@ -17,7 +17,7 @@ import java.io.File;
 
 public class RegisterAccountActivity extends AppCompatActivity {
 
-    private File imageFile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,32 +26,6 @@ public class RegisterAccountActivity extends AppCompatActivity {
 
     }
 
-    public void selfiePicture(View view){
 
-        Intent pictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        imageFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "selfie.jpg");
-        Uri tempUri = Uri.fromFile(imageFile);
-        pictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
-        pictureIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
-        startActivityForResult(pictureIntent, 0);
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if(requestCode == 0){
-            switch (requestCode){
-                case Activity.RESULT_OK:
-                    if (imageFile.exists()){
-                        Toast.makeText(this, "The file was saved at" + imageFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
-                    }
-                    break;
-                case Activity.RESULT_CANCELED:
-                    Toast.makeText(this, "Error in saving file", Toast.LENGTH_LONG).show();
-                    break;
-            }
-        }
-    }
 
 }
