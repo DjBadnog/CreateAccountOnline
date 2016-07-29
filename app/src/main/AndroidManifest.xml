@@ -31,6 +31,10 @@
         <activity
             android:name=".CaptureDocumentsActivity"
             android:label="@string/title_activity_capture_documents"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/edtAccountNumber"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:hint="Account Number"
@@ -55,10 +55,10 @@
         android:layout_height="wrap_content"
         android:inputType="numberPassword"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
+        android:id="@+id/edtPassword"
+        android:layout_below="@+id/edtAccountNumber"
+        android:layout_alignLeft="@+id/edtAccountNumber"
+        android:layout_alignStart="@+id/edtAccountNumber"
         android:hint="Password"
         android:textAlignment="center"
         android:textColor="#fff"
@@ -69,9 +69,10 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/btnLogin"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/edtPassword"
         android:layout_centerHorizontal="true"
-        android:background="#fff" />
+        android:background="#fff"
+        android:onClick="login" />
 
     <Button
         android:layout_width="match_parent"

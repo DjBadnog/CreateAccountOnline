@@ -42,6 +42,8 @@ public class RegisterAccountActivity extends AppCompatActivity {
         phoneNumber = (EditText)findViewById(R.id.edtPhoneNumber);
         address = (EditText)findViewById(R.id.edtPostalAddress);
 
+        //checkFields();
+
     }
 
     //Function to disable button if fields doesnt have value
