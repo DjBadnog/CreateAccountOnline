@@ -5,4 +5,5 @@
     <string name="title_activity_capture_documents">CaptureDocumentsActivity</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_nfc_payment">NfcPaymentActivity</string>
+    <string name="title_activity_savings_account">SavingsAccountActivity</string>
 </resources>

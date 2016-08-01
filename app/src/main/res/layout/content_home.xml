@@ -20,7 +20,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/savings"/>
+        android:background="@drawable/savings"
+        android:onClick="savingsAccount" />
 
     <ImageButton
         android:layout_width="150dp"

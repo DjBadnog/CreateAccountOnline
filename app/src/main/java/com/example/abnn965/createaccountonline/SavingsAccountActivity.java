@@ -1,6 +1,5 @@
 package com.example.abnn965.createaccountonline;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,12 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class HomeActivity extends AppCompatActivity {
+public class SavingsAccountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_savings_account);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -25,17 +24,6 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-    }
-
-    public void nfcActivity(View view){
-        Intent nfcIntent = new Intent(HomeActivity.this, NfcPaymentActivity.class);
-        startActivity(nfcIntent);
-
-    }
-
-    public void savingsAccount(View view){
-        Intent savingsIntent = new Intent(HomeActivity.this, SavingsAccountActivity.class);
-        startActivity(savingsIntent);
     }
 
 }

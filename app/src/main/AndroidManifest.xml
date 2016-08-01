@@ -4,14 +4,16 @@
 
     <!-- Accessing Camera -->
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    <!--NFC permissions-->
-    <uses-permission android:name="android.permission.NFC"/>
+    <!-- NFC permissions -->
+    <uses-permission android:name="android.permission.NFC" />
+
     <uses-feature
         android:name="android.hardware.nfc"
-        android:required="false"/>
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -44,6 +46,10 @@
         <activity
             android:name=".NfcPaymentActivity"
             android:label="@string/title_activity_nfc_payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SavingsAccountActivity"
+            android:label="@string/title_activity_savings_account"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
