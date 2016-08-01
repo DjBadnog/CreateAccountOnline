@@ -65,5 +65,6 @@
         android:text="NFC Payment"
         android:id="@+id/btnNfc"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="nfcActivity" />
 </RelativeLayout>

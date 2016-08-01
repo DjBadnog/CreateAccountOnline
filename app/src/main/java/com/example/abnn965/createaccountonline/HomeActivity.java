@@ -1,5 +1,6 @@
 package com.example.abnn965.createaccountonline;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,6 +25,12 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void nfcActivity(View view){
+        Intent nfcIntent = new Intent(HomeActivity.this, NfcPaymentActivity.class);
+        startActivity(nfcIntent);
+
     }
 
 }
