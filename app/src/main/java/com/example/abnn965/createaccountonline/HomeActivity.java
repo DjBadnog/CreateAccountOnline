@@ -65,8 +65,8 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         if (id == R.id.savingsAccounts) {
-            Intent homeIntent = new Intent(HomeActivity.this, HomeActivity.class);
-            startActivity(homeIntent);
+            Intent savingsAccountIntent = new Intent(HomeActivity.this, SavingsAccountActivity.class);
+            startActivity(savingsAccountIntent);
         }
 
         if (id == R.id.transactAccount) {

@@ -6,8 +6,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 public class SavingsAccountActivity extends AppCompatActivity {
+
+    private TextView tvBalance;
+    private int balance = 50000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,13 @@ public class SavingsAccountActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        tvBalance = (TextView) findViewById(R.id.txtBalance);
+        tvBalance.setText("" + balance);
     }
 
+    public double airtime(){
+
+        return balance;
+    }
 }
