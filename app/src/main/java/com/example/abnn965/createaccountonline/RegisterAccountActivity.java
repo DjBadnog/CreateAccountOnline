@@ -86,7 +86,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
             startActivity(captureDocs);
         }
         else{
-            Toast.makeText(RegisterAccountActivity.this, "User not registered", Toast.LENGTH_LONG).show();
+            Toast.makeText(RegisterAccountActivity.this, "User not registered, try again!!!", Toast.LENGTH_LONG).show();
         }
 
         
