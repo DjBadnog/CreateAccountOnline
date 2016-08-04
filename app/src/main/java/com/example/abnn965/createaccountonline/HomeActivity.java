@@ -40,6 +40,12 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(savingsIntent);
     }
 
+    public void addAccount(View view){
+
+        Intent addAccountIntent = new Intent(HomeActivity.this, AddAccountActivity.class);
+        startActivity(addAccountIntent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

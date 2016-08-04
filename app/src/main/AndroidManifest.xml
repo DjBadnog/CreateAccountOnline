@@ -50,6 +50,10 @@
         <activity
             android:name=".SavingsAccountActivity"
             android:label="@string/title_activity_savings_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddAccountActivity"
+            android:label="@string/title_activity_add_account"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

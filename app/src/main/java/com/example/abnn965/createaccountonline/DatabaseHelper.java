@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //Inserting values into Customer table
+    //Inserting values into  table
     public boolean insertCustomerDetails(String name, String surname, String identityNumber, String phoneNumber, String postalAddress, String email){
 
         SQLiteDatabase db = this.getWritableDatabase();
