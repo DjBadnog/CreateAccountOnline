@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.abnn965.createaccountonline.MainActivity">
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_list_white_24dp">
+
+        <menu>
+            <item android:id="@+id/home"
+                android:title="Home"
+                android:icon="@drawable/ic_home_black_24dp"
+                app:showAsAction="always">
+            </item>
+            <item android:id="@+id/savingsAccounts"
+                android:title="Savings Accounts"
+                android:icon="@drawable/savings"
+                app:showAsAction="always">
+            </item>
+            <item android:id="@+id/creditAccount"
+                android:title="Credit Account"
+                app:showAsAction="ifRoom"
+                android:icon="@drawable/credit">
+            </item>
+            <item android:id="@+id/transactAccount"
+                android:title="Transact Account"
+                android:icon="@drawable/transact">
+            </item>
+            <item android:id="@+id/chequeAccount"
+                android:title="Cheque Account"
+                android:icon="@drawable/cheque">
+            </item>
+        </menu>
+
+    </item>
+
+
+
+</menu>
