@@ -2,6 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.abnn965.createaccountonline">
 
+    <!-- Accessing Camera -->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- NFC permissions -->
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +34,22 @@
         <activity
             android:name=".RegisterAccountActivity"
             android:label="@string/title_activity_register_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CaptureDocumentsActivity"
+            android:label="@string/title_activity_capture_documents"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NfcPaymentActivity"
+            android:label="@string/title_activity_nfc_payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SavingsAccountActivity"
+            android:label="@string/title_activity_savings_account"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
