@@ -1,5 +1,6 @@
 package com.example.abnn965.createaccountonline;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -17,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4 = "IDENTITY_NUMBER";
     public static final String COL_5 = "PHONE_NUMBER";
     public static final String COL_6 = "POSTAL_ADDRESS";
-    public static final String COL_7 = "EMAIL_ADDRESS";
+    public static final String COL_7 = "EMAIL";
 
     public static final String TABLE_NAME2 = "account_table";
     public static final String TCOL_1 = "ID";
@@ -28,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
-        SQLiteDatabase db = this.getWritableDatabase();
+        //SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
@@ -45,5 +46,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXIST" + TABLE_NAME);
         db.execSQL("DROP TABLE IF EXIST" + TABLE_NAME2);
         onCreate(db);
+    }
+
+    //Inserting values into Customer table
+    public boolean insertCustomerDetails(String name, String surname, String identityNumber, String phoneNumber, String postalAddress, String email){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(COL_2, name);
+        contentValues.put(COL_3, surname);
+        contentValues.put(COL_4, identityNumber);
+        contentValues.put(COL_5, phoneNumber);
+        contentValues.put(COL_6, postalAddress);
+        contentValues.put(COL_7, email);
+
+        long results = db.insert(TABLE_NAME, null, contentValues);
+
+        if (results == -1){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

@@ -52,10 +52,9 @@
         android:layout_alignEnd="@+id/imageButton2" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/imageView4"
-        android:layout_marginTop="38dp"
         android:background="@drawable/absa"
         android:layout_below="@+id/imageButton3"
         android:layout_centerHorizontal="true" />
@@ -68,4 +67,13 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="nfcActivity" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Account"
+        android:id="@+id/btnAddAccount"
+        android:onClick="nfcActivity"
+        android:layout_above="@+id/btnNfc"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

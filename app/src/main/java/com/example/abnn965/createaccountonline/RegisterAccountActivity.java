@@ -46,6 +46,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
         email = (EditText)findViewById(R.id.edtEmail);
         phoneNumber = (EditText)findViewById(R.id.edtPhoneNumber);
         address = (EditText)findViewById(R.id.edtPostalAddress);
+        identityNumber = (EditText)findViewById(R.id.edtIdentityNumber);
 
         //checkFields();
 
@@ -59,7 +60,8 @@ public class RegisterAccountActivity extends AppCompatActivity {
                 !surname.getText().toString().isEmpty() &&
                 !email.getText().toString().isEmpty() &&
                 !phoneNumber.getText().toString().isEmpty() &&
-                !address.getText().toString().isEmpty()) {
+                !address.getText().toString().isEmpty()&&
+                !identityNumber.getText().toString().isEmpty()) {
 
             submit.setEnabled(true);
         } else {
@@ -68,10 +70,26 @@ public class RegisterAccountActivity extends AppCompatActivity {
 
     }
 
-    public void captureDocuments(View view){
+    public void addCustomerDetails(View view){
+
+       boolean isInserted = myDb.insertCustomerDetails(name.getText().toString(),
+                                   surname.getText().toString(),
+                                   identityNumber.getText().toString() ,
+                                   phoneNumber.getText().toString(),
+                                   address.getText().toString(),
+                                   email.getText().toString());
+
+        if (isInserted == true){
+            Toast.makeText(RegisterAccountActivity.this, "Successfully added information, Please capture Documents", Toast.LENGTH_LONG).show();
 
             Intent captureDocs = new Intent(RegisterAccountActivity.this, CaptureDocumentsActivity.class);
             startActivity(captureDocs);
+        }
+        else{
+            Toast.makeText(RegisterAccountActivity.this, "User not registered", Toast.LENGTH_LONG).show();
+        }
+
+        
     }
 
 

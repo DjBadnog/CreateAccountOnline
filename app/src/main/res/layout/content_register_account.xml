@@ -20,12 +20,14 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/edtName"
-        android:layout_marginTop="137dp"
+        android:layout_marginTop="36dp"
         android:hint="Name"
         android:textAlignment="center"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/imageView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,18 +49,9 @@
         android:hint="Surname"
         android:textAlignment="center"
         android:layout_below="@+id/edtName"
-        android:layout_alignParentLeft="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/edtEmail"
-        android:textAlignment="center"
-        android:hint="Email"
-        android:layout_below="@+id/edtSurname"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
     <EditText
         android:layout_width="match_parent"
@@ -68,8 +61,10 @@
         android:id="@+id/edtPhoneNumber"
         android:hint="Phone Number"
         android:textAlignment="center"
-        android:layout_below="@+id/edtEmail"
-        android:layout_alignParentLeft="true" />
+        android:layout_below="@+id/edtPostalAddress"
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
     <EditText
         android:layout_width="match_parent"
@@ -79,25 +74,54 @@
         android:id="@+id/edtPostalAddress"
         android:textAlignment="center"
         android:hint="Postal Adderss"
-        android:layout_below="@+id/edtPhoneNumber"
-        android:layout_alignParentLeft="true" />
+        android:layout_below="@+id/edtIdentityNumber"
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/btnSubmitPersonalDetails"
-        android:layout_below="@+id/edtPostalAddress"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp"
-        android:onClick="captureDocuments"
-        android:background="#fff" />
+        android:layout_marginTop="74dp"
+        android:onClick="addCustomerDetails"
+        android:background="#fff"
+        android:layout_below="@+id/edtEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/imageView2"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
         android:background="@drawable/absa"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edtIdentityNumber"
+        android:textAlignment="center"
+        android:hint="Identity Number"
+        android:layout_below="@+id/edtSurname"
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/edtEmail"
+        android:textAlignment="center"
+        android:hint="Email"
+        android:layout_below="@+id/edtPhoneNumber"
+        android:layout_alignParentLeft="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff" />
 </RelativeLayout>
