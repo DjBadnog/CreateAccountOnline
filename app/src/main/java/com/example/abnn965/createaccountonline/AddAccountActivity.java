@@ -6,8 +6,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 public class AddAccountActivity extends AppCompatActivity {
+
+    private TextView tvacc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,9 @@ public class AddAccountActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        tvacc = (TextView)findViewById(R.id.txtaccnumber);
+        tvacc.setText(getIntent().getExtras().getString("AccountNumber"));
     }
 
 }

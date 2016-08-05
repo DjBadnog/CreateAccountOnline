@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(accountNumber.getText().toString().equals("123456789") && password.getText().toString().equals("12345")){
             Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
+            loginIntent.putExtra("AccountNumber",accountNumber.getText().toString());
             startActivity(loginIntent);
             Toast.makeText(getApplication(), "Login Successful", Toast.LENGTH_SHORT).show();
         }

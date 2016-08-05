@@ -9,8 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private TextView tvssss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,10 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        tvssss = (TextView)findViewById(R.id.tvssss);
+        tvssss.setText(getIntent().getExtras().getString("AccountNumber"));
+
     }
 
     public void nfcActivity(View view){
@@ -43,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
     public void addAccount(View view){
 
         Intent addAccountIntent = new Intent(HomeActivity.this, AddAccountActivity.class);
+        addAccountIntent.putExtra("AccountNumber",tvssss.getText().toString() );
         startActivity(addAccountIntent);
     }
 
