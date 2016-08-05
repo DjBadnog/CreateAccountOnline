@@ -1,16 +1,20 @@
 package com.example.abnn965.createaccountonline;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddAccountActivity extends AppCompatActivity {
 
-    private TextView tvacc;
+    DatabaseHelper myDb;
+
+    private TextView tvIdentityNumber;
+    private TextView tvAccountNumber;
+    private EditText accountType;
+    private EditText accountBalance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +23,25 @@ public class AddAccountActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        myDb = new DatabaseHelper(this);
 
-        tvacc = (TextView)findViewById(R.id.txtaccnumber);
-        tvacc.setText(getIntent().getExtras().getString("AccountNumber"));
+        tvIdentityNumber = (TextView)findViewById(R.id.tvIdentityNumberAdd);
+        tvIdentityNumber.setText(getIntent().getExtras().getString("IdentityNumber"));
+
+        tvAccountNumber = (TextView)findViewById(R.id.tvaccountNumberAdd);
+        tvAccountNumber.setText(getIntent().getExtras().getString("AccountNumber"));
+
+        accountBalance = (EditText)findViewById(R.id.edtAccountBalance);
+        accountType = (EditText)findViewById(R.id.edtAccountType);
+    }
+
+    public void addAccountdetails(View view){
+
+        boolean isInserted = myDb.insertAccountDetails(tvAccountNumber.getText().toString(),
+                                                        accountType.getText().toString(),
+                                                        new Double(accountBalance.getText().toString()),
+                                                        tvIdentityNumber.getText().toString());
+
     }
 
 }

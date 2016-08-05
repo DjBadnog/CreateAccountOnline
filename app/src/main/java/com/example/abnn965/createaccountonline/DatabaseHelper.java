@@ -48,7 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //Inserting values into  table
+    //Inserting values into customer table
     public boolean insertCustomerDetails(String name, String surname, String identityNumber, String phoneNumber, String postalAddress, String email){
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -62,6 +62,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_7, email);
 
         long results = db.insert(TABLE_NAME, null, contentValues);
+
+        if (results == -1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean insertAccountDetails(String AccountNumber, String AccountType,double balance, String idNumber){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(TCOL_2, AccountNumber);
+        contentValues.put(TCOL_3, AccountType);
+        contentValues.put(TCOL_4, balance);
+        contentValues.put(TCOL_5, idNumber);
+
+        long results = db.insert(TABLE_NAME2, null, contentValues);
 
         if (results == -1){
             return false;

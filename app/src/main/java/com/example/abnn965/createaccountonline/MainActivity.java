@@ -1,6 +1,8 @@
 package com.example.abnn965.createaccountonline;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,10 +16,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    SQLiteDatabase myDb;
+    DatabaseHelper dbH;
 
     private EditText accountNumber;
     private EditText password;
+    private EditText identityNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         accountNumber = (EditText) findViewById(R.id.edtAccountNumber);
         password = (EditText) findViewById(R.id.edtPassword);
+        identityNumber = (EditText)findViewById(R.id.edtIdentityNumber);
+
+        dbH = new DatabaseHelper(this);
 
     }
 
@@ -38,15 +45,35 @@ public class MainActivity extends AppCompatActivity {
     //Method to login
     public void login(View view){
 
-        if(accountNumber.getText().toString().equals("123456789") && password.getText().toString().equals("12345")){
-            Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
-            loginIntent.putExtra("AccountNumber",accountNumber.getText().toString());
-            startActivity(loginIntent);
-            Toast.makeText(getApplication(), "Login Successful", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(getApplication(), "Account or password dont match", Toast.LENGTH_LONG).show();
-        }
+        final String TABLE_NAME = " customer_table";
+        String selectQuery = "SELECT * FROM " + TABLE_NAME;
+        myDb = dbH.getReadableDatabase();
+        Cursor cursor = myDb.rawQuery(selectQuery, null);
+
+        while(cursor.moveToNext()){
+            String id = cursor.getString(0);
+            String name = cursor.getString(1);
+            String surname = cursor.getString(2);
+            String identityNumberDB = cursor.getString(3);
+            String phoneNumber = cursor.getString(4);
+            String postalAddress = cursor.getString(5);
+            String email = cursor.getString(6);
+
+            //Toast.makeText(this, "ID: "+ id + " name: "+name+" surname "+ surname + " idNumber "+ identityNumber + " phone "+ phoneNumber + " postal "+ postalAddress + " email "+ email, Toast.LENGTH_LONG).show();
+            if(accountNumber.getText().toString().equals("123456789") && password.getText().toString().equals("12345") && identityNumber.getText().toString().equals(identityNumberDB) ){
+                Intent loginIntent = new Intent(MainActivity.this, HomeActivity.class);
+                loginIntent.putExtra("AccountNumber",accountNumber.getText().toString());
+                loginIntent.putExtra("IdentityNumber", identityNumber.getText().toString());
+                startActivity(loginIntent);
+                Toast.makeText(getApplication(), "Login Successful", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                //Toast.makeText(getApplication(), "Account or password dont match", Toast.LENGTH_LONG).show();
+            }
+
+        }cursor.close();
+
+
     }
 
     @Override

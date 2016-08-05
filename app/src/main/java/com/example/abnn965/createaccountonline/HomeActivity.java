@@ -13,7 +13,8 @@ import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private TextView tvssss;
+    private TextView tvIdentityNumber;
+    private TextView tvaccountNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,11 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        tvssss = (TextView)findViewById(R.id.tvssss);
-        tvssss.setText(getIntent().getExtras().getString("AccountNumber"));
+        tvaccountNumber = (TextView)findViewById(R.id.tvAccountNumber);
+        tvIdentityNumber = (TextView)findViewById(R.id.tvIdentityNumber);
+
+        tvIdentityNumber.setText(getIntent().getExtras().getString("IdentityNumber"));
+        tvaccountNumber.setText(getIntent().getExtras().getString("AccountNumber"));
 
     }
 
@@ -50,7 +54,8 @@ public class HomeActivity extends AppCompatActivity {
     public void addAccount(View view){
 
         Intent addAccountIntent = new Intent(HomeActivity.this, AddAccountActivity.class);
-        addAccountIntent.putExtra("AccountNumber",tvssss.getText().toString() );
+        addAccountIntent.putExtra("IdentityNumber", tvIdentityNumber.getText().toString() );
+        addAccountIntent.putExtra("AccountNumber", tvaccountNumber.getText().toString() );
         startActivity(addAccountIntent);
     }
 
