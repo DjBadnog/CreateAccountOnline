@@ -1,11 +1,13 @@
 package com.example.abnn965.createaccountonline;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddAccountActivity extends AppCompatActivity {
 
@@ -41,6 +43,16 @@ public class AddAccountActivity extends AppCompatActivity {
                                                         accountType.getText().toString(),
                                                         new Double(accountBalance.getText().toString()),
                                                         tvIdentityNumber.getText().toString());
+
+        if (isInserted == true){
+            Toast.makeText(AddAccountActivity.this, "Successfully added account", Toast.LENGTH_LONG).show();
+
+            Intent addAccountIntent = new Intent(AddAccountActivity.this, SavingsAccountActivity.class);
+            startActivity(addAccountIntent);
+        }
+        else{
+            Toast.makeText(AddAccountActivity.this, "Account not registered, try again!!!", Toast.LENGTH_LONG).show();
+        }
 
     }
 
