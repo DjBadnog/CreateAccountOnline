@@ -7,4 +7,5 @@
     <string name="title_activity_nfc_payment">NfcPaymentActivity</string>
     <string name="title_activity_savings_account">SavingsAccountActivity</string>
     <string name="title_activity_add_account">AddAccountActivity</string>
+    <string name="title_activity_airtime">AirtimeActivity</string>
 </resources>
