@@ -62,7 +62,13 @@ public class SavingsAccountActivity extends AppCompatActivity {
 
     public void airtime(View view){
         Intent airtimeIntent = new Intent(SavingsAccountActivity.this, AirtimeActivity.class);
+        airtimeIntent.putExtra("Balance", tvBalance.getText().toString());
         startActivity(airtimeIntent);
+    }
+
+    public void backhome(View view){
+        Intent backIntent = new Intent(SavingsAccountActivity.this, HomeActivity.class);
+        startActivity(backIntent);
     }
 
 }
